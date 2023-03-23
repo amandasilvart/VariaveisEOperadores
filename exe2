@@ -1,0 +1,192 @@
+//Mago Iniciante
+
+//01.Defina um valor e escreva a mensagem ‘É MAIOR QUE 10!’ se o valor lido for maior que 10,
+//caso contrário escrever NÃO É MAIOR QUE 10!
+
+integer valor= 8;
+
+if(valor>10){
+system.debug('É MAIOR QUE 10');
+}else{
+system.debug('NÃO É MAIOR QUE 10!');
+}
+
+//02. Defina um valor e escreva se é positivo ou negativo (considere o valor zero como positivo).
+//integer valor= -5;
+
+if(valor>=0){
+system.debug('POSITIVO');
+}else{
+system.debug('NEGATIVO');
+}
+
+//03. Sr. Josevaldo quer saber a idade de seus clientes, crie um algoritmo que leia o ano de
+//nascimento e informe a idade (ano atual - ano de nascimento).
+decimal anoAtual= 2023;
+decimal anoNascimento = 1992;
+decimal idade= anoAtual-anoNascimento;
+system.debug('A idade do cliente é ' + idade);
+
+//04. Defina um número e depois imprima ele, seu antecessor e seu sucessor.
+integer numero1= 2;
+integer numero2= 2;
+integer antecessor=(--numero2);
+integer sucessor=(numero1++);
+system.debug(numero1);
+system.debug(antecessor);
+system.debug(sucessor);
+
+//05. Faça um algoritmo que defina um valor e depois determine se este valor é positivo ou
+negativo. (considere zero como positivo)
+decimal v1=5;
+decimal v2=6;
+decimal valorFinal= v1-v2;
+if(valorFinal<0){
+system.debug('O valor '+ valorFinal+' é negativo.');
+}else{
+system.debug('O valor '+ valorFinal+' é positivo.');
+}
+
+//06. Ler o ano atual e o ano de nascimento de uma pessoa. Escrever uma mensagem
+que diga se ela poderá ou não votar este ano (não é necessário considerar o mês em
+que a pessoa nasceu
+decimal anoAtual=2023;
+decimal anoNascimento= 2008;
+decimal idade= anoAtual-anoNascimento;
+if(idade>=16){
+system.debug(idade + ' Essa pessoa pode votar!');
+}else{
+system.debug(idade+ ' Essa pessoa não pode votar!');
+}
+
+//Mago Intermediário
+
+//07. Faça um algoritmo para ler: número da conta do cliente, saldo, débito e crédito. Após,
+//calcular e escrever o saldo atual (saldo atual = saldo - débito + crédito). Também testar se
+//saldo atual for maior ou igual a zero escrever a mensagem 'Saldo Positivo', senão escrever a
+//mensagem 'Saldo Negativo'.
+
+string numConta= '0001';
+decimal saldo= 100.00;
+decimal debito= 50.00;
+decimal credito= 2.00;
+decimal saldoAtual= (saldo-debito)+credito;
+system.debug('Numero da conta '+ numConta);
+system.debug('O saldo atual é de: ' +saldoAtual);
+if(saldoAtual>=0){
+system.debug('Saldo positivo!');
+
+}else{
+system.debug('Saldo negativo');
+}
+
+08. Não custa nada sonhar, as seleções finalistas da Copa do Mundo do Qatar são Brasil e
+França, quem será o campeão? Declare as variáveis finalista1, finalista2 e campeao.
+Se o campeão for Brasil, imprima: HEXACAMPEÃO!!!
+Se o campeão for França, imprima: TRICAMPEÃO!!!
+string finalista1= 'Brasil';
+string finalista2= 'França';
+string campeao= finalista2;
+if(campeao==finalista1){
+system.debug('HEXACAMPEÃO');
+}else{
+system.debug('TRICAMPEÃO');
+}
+
+//09. Declare dois valores e imprima quem é o maior, quem é o menor e qual a média.
+//(Exemplo: 'x é o maior!' | 'x é o menor!' | 'x é a média!')
+decimal v1=5;
+decimal v2=7;
+decimal v3=8;
+decimal media=(v1+v2+v3)/3;
+system.debug('A média é ' + media+'\nO valor maior é '+ v3+ '\nO valor menor é: '+v1);
+
+//Mago Supremo
+
+/*10. Sr. Josevaldo tem uma mini mercearia no Bairro do Limoeiro, em comemoração ao
+aniversário da lojinha, ele quer fazer uma promoção, em que todos os itens fiquem com 15% de
+desconto. A cliente Magali quer comprar 5Kg de melancia, o valor da fruta era de R$ 3,99/Kg
+antes da promoção. Como você ajudaria o Sr. Josevaldo a fazer esse cálculo em Apex? Ele
+precisa que seja mostrado na notinha (seu System.debug) o nome do cliente, o item comprado,
+a quantidade, o preço anterior, o preço atual, o valor total da compra sem a promoção e o valor
+total da compra com a promoção. Além disso, no fim da notinha deve haver a informação de
+quanto (R$) foi a economia total do cliente.*/
+
+string nomeCliente= 'Magali';
+string item='Melancia';
+integer quantidade= 5;
+Decimal precoAnterior= 3.99;
+decimal desconto=0.15;
+decimal precoComDesconto= precoAnterior-desconto;
+
+decimal totalDaCompra= precoComDesconto*quantidade;
+decimal valorEconomizado= (precoAnterior-precoComDesconto)*quantidade;
+
+system.debug('NotaFiscal\nNome do Cliente '+nomeCliente);
+system.debug('Item comprado: ' + item);
+system.debug('Quantidade: '+ quantidade);
+system.debug('Preço anterior: '+ precoAnterior);
+system.debug('Preço Atual' + precoComDesconto);
+System.debug('Valor total da compra: '+totalDaCompra);
+system.debug('Economia total do(a) '+ nomeCliente + ' foi de '+ valorEconomizado);
+
+//11. Sr. Josevaldo decidiu que na segunda semana da promoção de aniversário a promoção seria diferente:
+//Faça um algoritmo para definir: a descrição do produto(nome), a quantidade adquirida e o
+//preço unitário. Calcular e escrever o total(total = quantidade adquirida * preço unitário),
+//desconto e o total a pagar(total a pagar = total - desconto), sabendo-se que:
+//● Se quantidade <= 5 o desconto será de 2%
+//● Se quantidade > 5 e quantidade <=10 o desconto será de 3%
+//● Se quantidade > 10 o desconto será de 5%
+
+string nomeCliente= 'Magali';
+string item='Melancia';
+integer quantidade= 10;
+Decimal precoAnterior= 3.99;
+//decimal desconto=0.15;
+//decimal precoComDesconto= precoAnterior-desconto;
+//decimal totalDaCompra= precoComDesconto*quantidade;
+//decimal valorEconomizado= (precoAnterior-precoComDesconto)*quantidade;
+
+system.debug('NotaFiscal\nNome do Cliente '+nomeCliente);
+system.debug('Item comprado: ' + item);
+system.debug('Quantidade: '+ quantidade);
+//system.debug('Preço anterior: '+ precoAnterior);
+//system.debug('Preço Atual' + precoComDesconto);
+//System.debug('Valor total da compra: '+totalDaCompra);
+//system.debug('Economia total do(a) '+ nomeCliente + ' foi de '+ valorEconomizado);
+if(quantidade<=5){
+Decimal desconto2= 0.02;
+decimal precoComDesconto2= precoAnterior-desconto2;
+
+System.debug('Desconto de 2%\nValor unitário do produto: ' + precoComdesconto2 +
+'\nValor Da Compra: ' + (precoComDesconto2*quantidade));
+}if(quantidade>5){
+Decimal desconto3=0.03;
+decimal precoComDesconto3= precoAnterior-desconto3;
+System.debug('Desconto de 3%\nValor unitário do produto: ' + precoComdesconto3 +
+'\nValor Da Compra: ' + (precoComDesconto3*quantidade));
+}if(quantidade>10){
+Decimal desconto5= 0.05;
+decimal precoComDesconto5= precoAnterior-desconto5;
+System.debug('Desconto de 3%\nValor unitário do produto: ' + precoComdesconto5 +
+'\nValor Da Compra: ' + (precoComDesconto5*quantidade));
+}
+
+//12. Defina as notas da 1a. e 2a. avaliações de um aluno. Calcular a média aritmética
+//simples e escrever uma mensagem que diga se o aluno foi ou não aprovado
+//(considerar que nota igual ou maior que 6 o aluno é aprovado). Escrever também a
+//média calculada.
+
+decimal nota1Avalicao1= 8;
+decimal nota2Avalicao1= 8.5;
+decimal nota3Avalicao2= 5;
+decimal nota4Avalicao2= 8;
+decimal notaTotalAvalicao1= (nota1Avalicao1 + nota2Avalicao1)/2;
+decimal notaTotalAvalicao2= (nota3Avalicao2 + nota4Avalicao2)/2;
+decimal mediaFinal= (notaTotalAvalicao1+notaTotalAvalicao2)/2;
+system.debug('A média final do aluno é: ' + mediaFinal);
+if (mediaFinal>=6){
+system.debug('Aluno está aprovado!');
+}else{
+system.debug('Aluno está reprovado!');
+}
